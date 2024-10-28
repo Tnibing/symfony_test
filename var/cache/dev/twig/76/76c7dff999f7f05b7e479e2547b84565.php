@@ -236,6 +236,6 @@ class __TwigTemplate_95770bccb00a474daf73fa737f0e0bb0 extends Template
         {% block body %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "C:\\xampp\\htdocs\\practica_symfony\\templates\\base.html.twig");
+", "base.html.twig", "C:\\xampp\\htdocs\\symfony_test\\templates\\base.html.twig");
     }
 }

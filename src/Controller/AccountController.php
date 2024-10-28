@@ -33,12 +33,17 @@ class AccountController extends AbstractController
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) 
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             $account = $form->getData();
 
             $entityManager->persist($account);
             $entityManager->flush();
+
+            $this->addFlash(
+                'notice',
+                'Nou compte ' . $account->getCodigo() . ' creat!'
+            );
+            return $this->redirectToRoute('account_list');
         }
 
         return $this->render('account/account.html.twig', [
@@ -51,24 +56,65 @@ class AccountController extends AbstractController
     public function delete($id, EntityManagerInterface $entityManager)
     {
         $account = $entityManager
-                        ->getRepository(Account::class)
-                        ->find($id)
-        ;
+            ->getRepository(Account::class)
+            ->find($id);
 
-    if (!$account) {
-        throw $this->createNotFoundException(
-            'No se encontró el compte con id ' . $id
+        if (!$account) {
+            throw $this->createNotFoundException(
+                'No se encontró el compte con id ' . $id
+            );
+        }
+
+        $entityManager->remove($account);
+        $entityManager->flush();
+
+        $this->addFlash(
+            'notice',
+            'Cuenta ' . $account->getCodigo() . ' eliminada!'
         );
+
+        return $this->redirectToRoute('account_list');
     }
 
-    $entityManager->remove($account);
-    $entityManager->flush();
+    #[Route('/account/edit/{id}', name: 'account_edit', requirements: ['id' => '\d+'])]
+    public function edit($id, EntityManagerInterface $entityManager, Request $request)
+    {
+        $editedAccount = $entityManager
+            ->getRepository(Account::class)
+            ->find($id);
 
-    $this->addFlash(
-        'notice',
-        'Compte ' . $account->getCodigo() . ' eliminat!'
-    );
+        if (!$editedAccount) {
+            throw $this->createNotFoundException(
+                'No se encontró el compte con id ' . $id
+            );
+        }
 
-    return $this->redirectToRoute('account_list');
+        //$editedAccount = new Account();
+
+        $form = $this->createForm(AccountType::class, $editedAccount, array('submit' => 'Editar cuenta'));
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $editedAccount = $form->getData();
+            $entityManager->persist($editedAccount);
+            $entityManager->flush();
+
+
+            $this->addFlash(
+                'notice',
+                'Cuenta ' . $editedAccount->getCodigo() . ' editada!'
+            );
+            return $this->redirectToRoute('account_list');
+        }
+
+        // TODO
+
+
+        return $this->render('account/account.html.twig', [
+            'form' => $form->createView(),
+            'title' => 'Cuenta nueva',
+        ]);
     }
 }

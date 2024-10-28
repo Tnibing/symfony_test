@@ -82,7 +82,7 @@ class Client
 
     public function getFechaNacimiento(): ?String
     {
-        return $this->fecha_nacimiento->format('d-m-Y');
+        return $this->fecha_nacimiento;
     }
 
     public function setFechaNacimiento(\DateTimeInterface $fecha_nacimiento): static

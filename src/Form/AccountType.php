@@ -18,7 +18,10 @@ class AccountType extends AbstractType
             ->add('saldo')
             ->add('cliente', EntityType::class, [
                 'class' => Client::class,
-                'choice_label' => 'id',
+                'choice_label' =>
+                function (Client $cliente) {
+                    return $cliente->getNombre() . ' ' . $cliente->getApellidos();
+                },
             ])
             ->add('save', SubmitType::class, ['label' => $options['submit']])
         ;

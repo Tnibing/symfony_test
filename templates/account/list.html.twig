@@ -1,36 +1,40 @@
 {% extends 'base.html.twig'%}
 
-{% block title %}Llistat de comptes{% endblock %}
-{% block body %}
-        <h1>Llistat de comptes</h1>
-        <a href="{{ path('account_new') }}">+ Nou compte</a>
-
-        {% for message in app.flashes('notice') %}
-              <strong>Success!</strong>{{ message }}
-        {% endfor %}
-
-          <table style="margin-top: 20px;margin-bottom: 10px;">
-              <thead>
-                  <tr>
-                      <th>Codi</th><th>Saldo</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  {% for account in accounts %}
-                      <tr>
-                          <td>{{ account.codigo }}</td><td>{{ account.saldo }}</td>
-                          <td>
-                            <a href="{{ path('account_delete', {'id': account.id}) }}">Eliminar</a>
-                          </td>
-                      </tr>
-                  {% else %}
-                      <tr>
-                          <td colspan="5">No hi ha comptes.</td>
-                      </tr>
-                  {% endfor %}
-              </tbody>
-          </table>
-
-          <br>
-
+{% block title %}Llistat de comptes
 {% endblock %}
+{% block body %}
+	<h1>Llistat de comptes</h1>
+	<a href="{{ path('account_new') }}">+ Nou compte</a>
+
+	{% for message in app.flashes('notice') %}
+		<strong>Success!</strong>
+		{{ message }}
+	{% endfor %}
+
+	<table style="margin-top: 20px;margin-bottom: 10px;">
+		<thead>
+			<tr>
+				<th>Codi</th>
+				<th>Saldo</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for account in accounts %}
+				<tr>
+					<td>{{ account.codigo }}</td>
+					<td>{{ account.saldo }}</td>
+					<td>
+						<a href="{{ path('account_delete', {'id': account.id}) }}">Eliminar</a>
+						<br>
+						<br>
+						<a href="{{ path('account_edit', {'id': account.id}) }}">Editar</a>
+					</td>
+				</tr>
+			</tbody>
+		</tbody>
+	</tr>
+{% else %}
+	<tr>
+		<td colspan="5">No hi ha comptes.</td>
+	</tr>
+{% endfor %}</tbody></table><br>{% endblock %}

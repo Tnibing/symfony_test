@@ -166,6 +166,6 @@ class __TwigTemplate_35eb4907be6abc0d4e7d2c29f34425d3 extends Template
 \t\t{{ form_end(form) }}
 \t\t</div>
 {% endblock %}
-", "account/account.html.twig", "C:\\xampp\\htdocs\\practica_symfony\\templates\\account\\account.html.twig");
+", "account/account.html.twig", "C:\\xampp\\htdocs\\symfony_test\\templates\\account\\account.html.twig");
     }
 }

@@ -40,8 +40,11 @@ return [
                         .')'
                     .')'
                 .')'
-                .'|/account/delete/(\\d+)(*:223)'
-                .'|/client/delete/(\\d+)(*:251)'
+                .'|/account/(?'
+                    .'|delete/(\\d+)(*:226)'
+                    .'|edit/(\\d+)(*:244)'
+                .')'
+                .'|/client/delete/(\\d+)(*:273)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -53,8 +56,9 @@ return [
         168 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         181 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        223 => [[['_route' => 'account_delete', '_controller' => 'App\\Controller\\AccountController::delete'], ['id'], null, null, false, true, null]],
-        251 => [
+        226 => [[['_route' => 'account_delete', '_controller' => 'App\\Controller\\AccountController::delete'], ['id'], null, null, false, true, null]],
+        244 => [[['_route' => 'account_edit', '_controller' => 'App\\Controller\\AccountController::edit'], ['id'], null, null, false, true, null]],
+        273 => [
             [['_route' => 'client_delete', '_controller' => 'App\\Controller\\ClientController::delete'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

@@ -106,6 +106,6 @@ class __TwigTemplate_32e107181b7f108e2bd69ab57bbc13c1 extends Template
     &nbsp;&nbsp;&nbsp;
     <a href=\"{{ path('client_list') }}\">Clientes</a>
 </nav>
-", "navbar.html.twig", "C:\\xampp\\htdocs\\practica_symfony\\templates\\navbar.html.twig");
+", "navbar.html.twig", "C:\\xampp\\htdocs\\symfony_test\\templates\\navbar.html.twig");
     }
 }

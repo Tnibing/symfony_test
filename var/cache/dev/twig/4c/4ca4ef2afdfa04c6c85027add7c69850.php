@@ -73,7 +73,8 @@ class __TwigTemplate_048f001eb0e90dda824ed666e31e87d7 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Llistat de clientes";
+        yield "Llistat de clientes
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -83,7 +84,7 @@ class __TwigTemplate_048f001eb0e90dda824ed666e31e87d7 extends Template
         yield from [];
     }
 
-    // line 4
+    // line 5
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,79 +97,90 @@ class __TwigTemplate_048f001eb0e90dda824ed666e31e87d7 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 5
-        yield "        <h1>Llistat de clientes</h1>
-        <a href=\"";
         // line 6
+        yield "\t<h1>Llistat de clientes</h1>
+\t<a href=\"";
+        // line 7
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_new");
         yield "\">+ Nuevo cliente</a>
 
-        ";
-        // line 8
+\t";
+        // line 9
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 8, $this->source); })()), "flashes", ["notice"], "method", false, false, false, 8));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "flashes", ["notice"], "method", false, false, false, 9));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 9
-            yield "              <strong>Success!</strong>";
+            // line 10
+            yield "\t\t<strong>Success!</strong>
+\t\t";
+            // line 11
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
             yield "
-        ";
+\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 11
+        // line 13
         yield "
-          <table style=\"margin-top: 20px;margin-bottom: 10px;\">
-              <thead>
-                  <tr>
-                      <th>DNI</th><th>Nombre</th><th>Apellidos</th><th>Fecha de nacimiento</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  ";
-        // line 19
+\t<table style=\"margin-top: 20px;margin-bottom: 10px;\">
+\t\t<thead>
+\t\t\t<tr>
+\t\t\t\t<th>DNI</th>
+\t\t\t\t<th>Nombre</th>
+\t\t\t\t<th>Apellidos</th>
+\t\t\t\t<th>Fecha de nacimiento</th>
+\t\t\t</tr>
+\t\t</thead>
+\t\t<tbody>
+\t\t\t";
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["clientes"]) || array_key_exists("clientes", $context) ? $context["clientes"] : (function () { throw new RuntimeError('Variable "clientes" does not exist.', 19, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["clientes"]) || array_key_exists("clientes", $context) ? $context["clientes"] : (function () { throw new RuntimeError('Variable "clientes" does not exist.', 24, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["client"]) {
-            // line 20
-            yield "                      <tr>
-                          <td>";
-            // line 21
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["client"], "dni", [], "any", false, false, false, 21), "html", null, true);
-            yield "</td><td>";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["client"], "nombre", [], "any", false, false, false, 21), "html", null, true);
-            yield "</td><td>";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["client"], "apellidos", [], "any", false, false, false, 21), "html", null, true);
-            yield "</td><td>";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["client"], "fechaNacimiento", [], "any", false, false, false, 21), "html", null, true);
+            // line 25
+            yield "\t\t\t\t<tr>
+\t\t\t\t\t<td>";
+            // line 26
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["client"], "dni", [], "any", false, false, false, 26), "html", null, true);
             yield "</td>
-                          <td>
-                            <a href=\"";
-            // line 23
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["client"], "id", [], "any", false, false, false, 23)]), "html", null, true);
+\t\t\t\t\t<td>";
+            // line 27
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["client"], "nombre", [], "any", false, false, false, 27), "html", null, true);
+            yield "</td>
+\t\t\t\t\t<td>";
+            // line 28
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["client"], "apellidos", [], "any", false, false, false, 28), "html", null, true);
+            yield "</td>
+\t\t\t\t\t<td>";
+            // line 29
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["client"], "fechaNacimiento", [], "any", false, false, false, 29), "format", ["d-m-Y"], "method", false, false, false, 29), "html", null, true);
+            yield "</td>
+\t\t\t\t\t<td>
+\t\t\t\t\t\t<a href=\"";
+            // line 31
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["client"], "id", [], "any", false, false, false, 31)]), "html", null, true);
             yield "\">Eliminar</a>
-                          </td>
-                      </tr>
-                  ";
+\t\t\t\t\t</td>
+\t\t\t\t</tr>
+\t\t\t";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 27
-            yield "                      <tr>
-                          <td colspan=\"5\">No hay clientes.</td>
-                      </tr>
-                  ";
+            // line 35
+            yield "\t\t\t\t<tr>
+\t\t\t\t\t<td colspan=\"5\">No hay clientes.</td>
+\t\t\t\t</tr>
+\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['client'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 31
-        yield "              </tbody>
-          </table>
+        // line 39
+        yield "\t\t</tbody>
+\t</table>
 
-          <br>
+\t<br>
 
 ";
         
@@ -201,47 +213,55 @@ class __TwigTemplate_048f001eb0e90dda824ed666e31e87d7 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  168 => 31,  159 => 27,  150 => 23,  139 => 21,  136 => 20,  131 => 19,  121 => 11,  112 => 9,  108 => 8,  103 => 6,  100 => 5,  87 => 4,  64 => 3,  41 => 1,);
+        return array (  180 => 39,  171 => 35,  162 => 31,  157 => 29,  153 => 28,  149 => 27,  145 => 26,  142 => 25,  137 => 24,  124 => 13,  116 => 11,  113 => 10,  109 => 9,  104 => 7,  101 => 6,  88 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig'%}
 
-{% block title %}Llistat de clientes{% endblock %}
+{% block title %}Llistat de clientes
+{% endblock %}
 {% block body %}
-        <h1>Llistat de clientes</h1>
-        <a href=\"{{ path('client_new') }}\">+ Nuevo cliente</a>
+\t<h1>Llistat de clientes</h1>
+\t<a href=\"{{ path('client_new') }}\">+ Nuevo cliente</a>
 
-        {% for message in app.flashes('notice') %}
-              <strong>Success!</strong>{{ message }}
-        {% endfor %}
+\t{% for message in app.flashes('notice') %}
+\t\t<strong>Success!</strong>
+\t\t{{ message }}
+\t{% endfor %}
 
-          <table style=\"margin-top: 20px;margin-bottom: 10px;\">
-              <thead>
-                  <tr>
-                      <th>DNI</th><th>Nombre</th><th>Apellidos</th><th>Fecha de nacimiento</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  {% for client in clientes %}
-                      <tr>
-                          <td>{{ client.dni }}</td><td>{{ client.nombre }}</td><td>{{ client.apellidos }}</td><td>{{ client.fechaNacimiento }}</td>
-                          <td>
-                            <a href=\"{{ path('client_delete', {'id': client.id}) }}\">Eliminar</a>
-                          </td>
-                      </tr>
-                  {% else %}
-                      <tr>
-                          <td colspan=\"5\">No hay clientes.</td>
-                      </tr>
-                  {% endfor %}
-              </tbody>
-          </table>
+\t<table style=\"margin-top: 20px;margin-bottom: 10px;\">
+\t\t<thead>
+\t\t\t<tr>
+\t\t\t\t<th>DNI</th>
+\t\t\t\t<th>Nombre</th>
+\t\t\t\t<th>Apellidos</th>
+\t\t\t\t<th>Fecha de nacimiento</th>
+\t\t\t</tr>
+\t\t</thead>
+\t\t<tbody>
+\t\t\t{% for client in clientes %}
+\t\t\t\t<tr>
+\t\t\t\t\t<td>{{ client.dni }}</td>
+\t\t\t\t\t<td>{{ client.nombre }}</td>
+\t\t\t\t\t<td>{{ client.apellidos }}</td>
+\t\t\t\t\t<td>{{ client.fechaNacimiento.format('d-m-Y') }}</td>
+\t\t\t\t\t<td>
+\t\t\t\t\t\t<a href=\"{{ path('client_delete', {'id': client.id}) }}\">Eliminar</a>
+\t\t\t\t\t</td>
+\t\t\t\t</tr>
+\t\t\t{% else %}
+\t\t\t\t<tr>
+\t\t\t\t\t<td colspan=\"5\">No hay clientes.</td>
+\t\t\t\t</tr>
+\t\t\t{% endfor %}
+\t\t</tbody>
+\t</table>
 
-          <br>
+\t<br>
 
 {% endblock %}
-", "client/list.html.twig", "C:\\xampp\\htdocs\\practica_symfony\\templates\\client\\list.html.twig");
+", "client/list.html.twig", "C:\\xampp\\htdocs\\symfony_test\\templates\\client\\list.html.twig");
     }
 }

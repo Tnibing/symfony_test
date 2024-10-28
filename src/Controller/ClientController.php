@@ -33,8 +33,7 @@ class ClientController extends AbstractController
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) 
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             $client = $form->getData();
 
             $entityManager->persist($client);
@@ -51,25 +50,23 @@ class ClientController extends AbstractController
     public function delete($id, EntityManagerInterface $entityManager)
     {
         $client = $entityManager
-                        ->getRepository(Client::class)
-                        ->find($id)
-        ;
+            ->getRepository(Client::class)
+            ->find($id);
 
-    if (!$client) {
-        throw $this->createNotFoundException(
-            'No se encontró el cliente con id ' . $id
+        if (!$client) {
+            throw $this->createNotFoundException(
+                'No se encontró el cliente con id ' . $id
+            );
+        }
+
+        $entityManager->remove($client);
+        $entityManager->flush();
+
+        $this->addFlash(
+            'notice',
+            'Cliente ' . $client->getCodi() . ' eliminado!'
         );
-    }
 
-    $entityManager->remove($client);
-    $entityManager->flush();
-
-    $this->addFlash(
-        'notice',
-        'Cliente ' . $client->getCodi() . ' eliminat!'
-    );
-
-    return $this->redirectToRoute('client_list');
+        return $this->redirectToRoute('client_list');
     }
 }
-

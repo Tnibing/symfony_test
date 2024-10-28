@@ -159,6 +159,6 @@ class __TwigTemplate_49d11ef5f9b9a15d525241b1f8cee90a extends Template
     </div>
 
 {% endblock %}
-", "default/home.html.twig", "C:\\xampp\\htdocs\\practica_symfony\\templates\\default\\home.html.twig");
+", "default/home.html.twig", "C:\\xampp\\htdocs\\symfony_test\\templates\\default\\home.html.twig");
     }
 }
